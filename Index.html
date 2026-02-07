@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sharma Furniture Udyog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{margin:1px;font-family:'Times New Roman';}
+
+/* TOPBAR COLOR COMBINATION */
+.topbar{background:linear-gradient(to right,yellow,red,green,blue);color:white;padding:20px;text-align:center;font-weight:bold;}
+.topbar a{color:white;margin: 20px;text-decoration:collapse;}
+
+/* TEXT LOGO */
+#textLogo{position:absolute;top:60px;right:30px;font-size:35px;font-weight:bold;color: greenyellow; font-family: 'cursive;'; text-emphasis: bold;}
+
+/* NAVIGATION */
+.nav{display:flex;background:#111;flex-wrap:wrap;}
+.nav a{flex:1;padding:15px;text-align:center;color:white;font-weight:bold;text-decoration:blink;min-width:120px;}
+.nav a:hover{background:linear-gradient(to right ,green,yellow,red,blue);}
+
+.section{display:none;padding:20px;}
+.active{display:block;}
+
+.row{display:flex;gap:10px;flex-wrap:wrap;}
+.row img,.row video{width:80%; height: 80%}
+
+@media(max-width:768px){.row img,.row video{width:100%;}}
+
+/* CALCULATOR TOP */
+.topCalc{background:linear-gradient(to right,greenyellow,blue,red,pink,blue,green);padding:10px;text-align:center;color:white;}
+.topCalc input{width:120px;padding:5px;margin:5px;}
+
+/* FURNITURE ITEMS */
+.card{border:2px solid blue;width:250px;display:inline-block;margin:10px;padding:10px;}
+
+/* FORM */
+.formBox{width:100%;max-width:600px;margin:auto;border:3px solid;border-image:linear-gradient(blue,red,yellow,green,orange,navy) 1;padding:20px;}
+input{width:90%;padding:7px;margin:6px 0;}
+
+/* TABLE */
+table{width:100%;border:5px solid;border-color:blue red green, yellow;font-family:'Times New Roman';border-collapse:collapse;}
+th,td{border:4px solid;padding:15px;text-align:left;}
+th{font-weight:bold;}
+
+.thanks{text-align:center;font-size:15px;font-weight:bold; 
+background:linear-gradient(to right,yellow,green,red,pink.greenyellow);
+-webkit-background-clip:text;color:transparent;}
+body {
+    font-family: Arial;
+    background: #f2f2f2;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+.game {
+    width: 300px;
+    margin: 20px auto;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+}
+
+.cell {
+    width: 90px;
+    height: 90px;
+    background: white;
+    border: 2px solid #333;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cell:hover {
+    background: #e0e0e0;
+}
+
+#status {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    font-size: 16px;
+}
+</style>
+</head>
+<body>
+
+<div id="textLogo">Sharma Furniture</div>
+
+<div class="topbar">
+Email: businessmandilesh@gmail.com | Contact: 9845300826 |
+<a href="https://facebook.com">Facebook: Dilesh Sharma</a>
+<a href="https://www.instagram.com/">Instagram: rajthakur23458</a>
+<a href="https://www.tiktok.com/">Tiktok: raj.thakur72</a>
+</div>
+
+<!-- CALCULATOR ON TOP OF NAVIGATION -->
+<div class="topCalc">
+<b>Calculator:</b>
+<input id="ca" placeholder="Num1">
+<input id="cb" placeholder="Num2">
+<button onclick="topCalc()">Add</button>
+<span id="cres"></span>
+</div>
+
+<div class="nav">
+<a onclick="show('home')">ABOUT US</a>
+<a onclick="show('materials')">MATERIALS</a>
+<a onclick="show('items')">FURNITURE ITEMS</a>
+<a onclick="show('offer')">OFFERED</a>
+<a onclick="show('contact')">CONTACT & LOCATION</a>
+</div>
+
+<!-- HOME PAGE -->
+<div id="home" class="section active">
+<h2 style="color:color-mix(red,blue);">Sharma Furniture Udyog </h2>
+<div class="row">
+<video controls src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4"></video>
+<img src="C:\Users\HP\Pictures\Screenshots\furniture.jpg.jpg" alt="Sample Image" width="300" height="250">
+<img src="C:\Users\HP\Pictures\Screenshots\hotel.jpg" alt="Sample Image" width="300" height="250">
+</div>
+
+<h1>Importance of Furniture</h1>
+<h3>
+<ul>
+<li>Furniture gives comfort at home</li>
+<li>Improves beauty of hotel</li>
+<li>Creates good restaurant environment</li>
+<li>Supports healthy posture</li>
+<li>Makes storage easy</li>
+<li>Increase property value</li>
+<li>Shows culture and style</li>
+<li>Helpful for guests</li>
+<li>Long lasting investment</li>
+<li>Improve work efficiency</li>
+<li>Essential for daily life</li>
+<li>Create warm environment</li>
+</ul>
+</h3>
+<h2><strong>
+<p>This furniture is supported by Kageshwori Manohara Municipality to promote local furniture industry.</p></strong></h2>
+</div>
+
+<!-- MATERIALS PAGE -->
+<div id="materials" class="section">
+<h1>Materials – Wood Collection</h1>
+
+<h2>Team / Wood Types</h2>
+<div class="row">
+<img src="C:\Users\HP\Pictures\Screenshots\woodtype.jpg"/>
+<h3>
+<p>Wood is natural, strong and durable material used for quality furniture. Our team selects the best sal, sisau and pine wood.While there are many varieties of furniture material available today, like steel, stone, iron, plastic, etc., wooden furniture still tops the list for most buyers. Wood has historically been the choice material for crafting furniture. You can often find wooden furniture in all types of designs and looks that will be sure to suit your style and match your needs.
+
+There is something so timeless and versatile about wooden furniture. An aesthetic that has retained its relevance from ancient times to present day. With high-quality wood paints you can glorify the look of the wood pieces and shield it from cracks, swelling and stains.<br>
+Wood furniture requires minimal and effortless cleaning and maintenance. As long as you don’t expose it to harsh sunlight or moisture, it’s very easy to maintain its charm. Just clean it with a soft cloth and wood polish at regular intervals.
+</p></h3>
+</div>
+<h2>Why Woods are best</h2>
+<h3>
+<ul>
+<li>High durability</li>
+<li>Easy maintenance</li>
+<li>Beautiful finishing</li>
+<li>Affordable</li>
+<li>A naturally elegant look</li>
+<li>Durability to withstand any damage</li>
+<li>Weather Resistant</li>
+<li>Easy maintenance & cleaning</li>
+<li>Suitable for all areas</li>
+</ul>
+</h3>
+<div class="row">
+<img src="C:\Users\HP\Pictures\Screenshots\room.WEBP" width="300" height="250">
+<h2>
+<p style="font-family:'Times New Roman'; color: blue;">Items promoted by Kageshwori Manohara Municipality for local development.</p></h2>
+</div>
+</div>
+
+<!-- FURNITURE ITEM PAGE -->
+<div id="items" class="section">
+<h1>Furniture Items</h1>
+<h2>
+<p style="color:blue, greenyellow,pink,navy;">These are made from ply and wood.</p></h2>
+<div class="card"><img width="200" src="C:\Users\HP\Pictures\Screenshots\bench.jpg"><br>Bench - Rs.2000</div>
+<div class="card"><img width="200" src="C:\Users\HP\Pictures\Screenshots\desk.jpg"><br>Desk - Rs.5000</div>
+<div class="card"><img width="200" src="C:\Users\HP\Pictures\Screenshots\table.jpg"><br>Table - Rs.10000</div>
+<div class="card"><img width="200" src="C:\Users\HP\Pictures\Screenshots\sofa.WEBP"><br>Sofa - Rs.15000</div>
+<div class="card"><img width="200" src="C:\Users\HP\Pictures\Screenshots\bed.jpg"><br>Bed - Rs.50000</div>
+<div class="card"><img width="200" src="C:\Users\HP\Pictures\Screenshots\Chair.AVIF"><br>Chair - Rs.4000</div>
+<div class="card"><img width="200" src="C:\Users\HP\Pictures\Screenshots\door.jpg"><br>Door - Rs.31000</div>
+<div class="card"><img width="200" src="C:\Users\HP\Pictures\Screenshots\window.jpg"><br>Window - Rs.25000</div>
+<div class="card"><img width="200" src="C:\Users\HP\Pictures\Screenshots\tvrack.jpg"><br>TV Rack - Rs.120000</div>
+<div class="card"><img width="200" src="C:\Users\HP\Pictures\Screenshots\shoesrack.jpg"><br>Shoesh Rack - Rs.9000</div>
+<div class="card"><img width="200" src="C:\Users\HP\Pictures\Screenshots\bookrack.jpg"><br>Book Rack - Rs.12000</div>
+<div class="card"><img width="200" src="C:\Users\HP\Pictures\Screenshots\lowbed.jpg"><br>Low-bed - Rs.50000</div>
+<div class="card"><img width="200" src="C:\Users\HP\Pictures\Screenshots\daraj.jpg"><br>Daraj - Rs.100000</div>
+</div>
+
+<!-- OFFER PAGE -->
+<div id="offer" class="section">
+<h1>Offer & Order</h1>
+
+<div class="formBox">
+<h3>Calculator</h3>
+<input id="a" placeholder="Number 1">
+<input id="b" placeholder="Number 2">
+<button onclick="calc()">Add</button>
+<p id="res"></p>
+
+<h3>Order Form</h3>
+<input placeholder="Customer Name">
+<input placeholder="Address">
+<input placeholder="Email ID">
+<input placeholder="Contact Number">
+<input placeholder="Cash Payment">
+<input placeholder="Item Name">
+<input placeholder="Number of Item">
+<button>Submit</button>
+</div>
+
+<table>
+<tr><th>SN</th><th>Name of Item</th><th>Price</th></tr>
+<tr><td>1.</td><td>Bench</td><td>Rs.2000</td></tr>
+<tr><td>2.</td><td>Desk</td><td>Rs.5000</td></tr>
+<tr><td>3.</td><td>Table</td><td>Rs.10000</td></tr>
+<tr><td>4.</td><td>Sofa</td><td>Rs.15000</td></tr>
+<tr><td>5.</td><td>Low Bed</td><td>Rs.20000</td></tr>
+<tr><td>6.</td><td>Bed</td><td>Rs.50000</td></tr>
+<tr><td>7.</td><td>Daraj</td><td>Rs.100000</td></tr>
+<tr><td>8.</td><td>Chair</td><td>Rs.4000</td></tr>
+<tr><td>9.</td><td>Window</td><td>Rs.25000</td></tr>
+<tr><td>10.</td><td>Door</td><td>Rs.31000</td></tr>
+<tr><td>11.</td><td>TV Rack</td><td>Rs.120000</td></tr>
+<tr><td>12.</td><td>Shoes Rack</td><td>Rs.9000</td></tr>
+<tr><td>13.</td><td>Book Rack</td><td>Rs.12000</td></tr>
+</table>
+<button>Submit Table</button>
+</div>
+
+<!-- CONTACT PAGE -->
+<div class="card"><img width="200" src="C:\Users\HP\Pictures\Camera Roll\dilesh.png"><br>Dilesh sharma</div>
+<div id="contact" class="section" style="color:green;">
+<h2>Contact: 9845300826</h2>
+<h2>Email: Businessmandilesh@gmail.com</h2>
+<h2>Facebook: Dilesh Sharma</h2>
+<h2>Place: Mulpani, Kathmandu, Nepal</h2>
+<h3>
+<a href="https://facebook.com">facebook.com</a> <br>
+<a href="https://tiktok.com">tiktok.com</a> <br>
+<a href="https://twitter.com">twitter.com</a> <br>
+<a href="https://instagram.com">instagram.com</a>
+</h3>
+<div>
+  <h2>Why furniture neccessary</h2>
+  <h3>
+  <p style="color:blue;">Furniture is essential because it defines the functionality, comfort, and aesthetic of living and working spaces, transforming empty, lifeless rooms into organized, usable, and welcoming environments. It supports daily activities like sleeping, working, and eating, while reflecting personal style and improving quality of life. </p></h3>
+</div>
+<div>
+  <h2>Aallu cross game</h2>
+  <div class="game">
+    <div class="board">
+        <div class="cell" onclick="play(this,0)"></div>
+        <div class="cell" onclick="play(this,1)"></div>
+        <div class="cell" onclick="play(this,2)"></div>
+
+        <div class="cell" onclick="play(this,3)"></div>
+        <div class="cell" onclick="play(this,4)"></div>
+        <div class="cell" onclick="play(this,5)"></div>
+
+        <div class="cell" onclick="play(this,6)"></div>
+        <div class="cell" onclick="play(this,7)"></div>
+        <div class="cell" onclick="play(this,8)"></div>
+    </div>
+
+    <div id="status">Player X Turn</div>
+    <button onclick="reset()">Restart Game</button>
+</div>
+</div>
+<h2>
+<p style="color:navy;">Please buy quality furniture from us for home, hotel and restaurant. Our products are durable and trusted.</p>
+<p style="color: greenyellow; width: 100px; line-height: 30px; font-size: 30px; font-family: cursive; text-align: auto; border: 5px; border-color: navy;">Thank you for visited this website....</p>
+</h2>
+<script>
+function show(id){
+ document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+}
+
+function calc(){
+ var x=parseInt(a.value||0);
+ var y=parseInt(b.value||0);
+ res.innerText='Result: '+(x+y);
+}
+
+function topCalc(){
+ var x=parseInt(ca.value||0);
+ var y=parseInt(cb.value||0);
+ cres.innerText=' = '+(x+y);
+}
+</script>
+<!-- WHATSAPP FLOAT BUTTON -->
+<a href="https://wa.me/9779845300826" target="_blank"
+style="position:fixed;bottom:25px;right:30px;background:#25d366;
+color:white;padding:10px 15px;border-radius:50px;
+text-decoration:none;font-weight:bold;z-index:999;">
+WhatsApp Chat
+</a>
+
+<!-- MESSENGER CHAT -->
+<div id="fb-root"></div>
+
+<div id="fb-customer-chat" class="fb-customerchat"></div>
+<script>
+  var chatbox = document.getElementById('fb-customer-chat');
+  chatbox.setAttribute("page_id", "YOUR_FACEBOOK_PAGE_ID");
+  chatbox.setAttribute("attribution", "biz_inbox");
+</script>
+<script>let board = ["","","","","","","","",""];
+let current = "X";
+let gameOver = false;
+
+function play(cell, index) {
+    if (board[index] == "" && !gameOver) {
+        board[index] = current;
+        cell.innerHTML = current;
+
+        checkWinner();
+
+        if (!gameOver) {
+            current = current == "X" ? "O" : "X";
+            document.getElementById("status").innerHTML =
+                "Player " + current + " Turn";
+        }
+    }
+}
+
+function checkWinner() {
+    let win = [
+        [0,1,2], [3,4,5], [6,7,8],
+        [0,3,6], [1,4,7], [2,5,8],
+        [0,4,8], [2,4,6]
+    ];
+
+    for (let i of win) {
+        let a = i[0], b = i[1], c = i[2];
+
+        if (board[a] &&
+            board[a] == board[b] &&
+            board[a] == board[c]) {
+
+            document.getElementById("status").innerHTML =
+                "Player " + board[a] + " Wins!";
+            gameOver = true;
+            return;
+        }
+    }
+
+    if (!board.includes("")) {
+        document.getElementById("status").innerHTML = "Match Draw!";
+        gameOver = true;
+    }
+}
+
+function reset() {
+    board = ["","","","","","","","",""];
+    current = "X";
+    gameOver = false;
+
+    let cells = document.getElementsByClassName("cell");
+    for (let c of cells) {
+        c.innerHTML = "";
+    }
+
+    document.getElementById("status").innerHTML =
+        "Player X Turn";
+}</script>
+</body>
+</html>
